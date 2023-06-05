@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Negocios- Grupo Pixel</title>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="encabezado">
+
+            <h1><img src="img/logo.jpg"></h1>
+
+            <nav>
+                    
+                <ul>
+                
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="negocios.html">Negocios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <div class="carrousel">
+
+            <div class="grande">
+
+                <img src="img/pixelLogoIndex.png" alt="Pixel store" class="img">
+                <img src="img/alquilerPixIndex.png" alt="Pix Alquileres" class="img">
+
+            </div>
+
+            <ul class="puntos">
+                <li class="punto activo"></li>
+                <li class="punto"></li>
+            </ul>
+
+        </div>
+
+        <a name="anclaStore"></a>
+        <section class="pixelStoreNegocios">
+
+            <h2><img src="img/pixelLogoIndex.png" alt="Pixel store"></h2>
+            <p>Fundado en 2021, Pixel Store abre su primer local en el nuevo centro de la Villa de Merlo, con muy poco capital y mucho entusiasmo.
+                Luego de un analisis de negocio, se llegó a la conclusión de que lo ideal para el negocio era dedicarse al sector turista y así
+                se consolidó el publico principal de nuestros negocios. El principal objetivo era ser un negocio que nos brinde libertad financiera
+                para poder realizar nuevos proyectos, pero luego de los primeros meses en acción, notamos que la rentabilidad era muy buena y decidimos
+                expandir nuestra idea de negocio. Actualmente contamos con 3 sedes, 2 en la Villa de Merlo y en verano del 2023 nos expandimos a Mina clavero, Cordoba.
+                y estamos trabajando en nuestra cuarta sede en Carpinteria, San Luis.
+
+            </p>
+
+            <section class="mapa">
+
+                <h3>Ubicación de nuestra primera sede</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1501.470888558866!2d-65.00286701132919!3d-32.34710092082202!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d2e10f9d4f07e9%3A0x7b18d01781a30f7b!2sPixel%20Store%20-%20Accesorios%20para%20celulares!5e0!3m2!1ses-419!2sar!4v1685915538242!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </section>
+
+        </section>
+
+        <a name="anclaAlquiler"></a>
+        <section class="PixAlquileresNegocios">
+            
+            <h2><img src="img/alquilerPixIndex.png" alt="Pix Alquileres"></h2>
+            <p>
+
+                Gracias al exito de Pixel Store, Pix Alquileres abre sus puertas en 2023 en la Villa de Merlo. Nos dedicamos al alquiler de propiedades por día en el
+                sector del turismo, nuestra idea de negocio es facilitar la administración de sus viviendas a propietarios que no residen en la provincia,
+                permitiendo recibir clientes, encargarnos de la limpieza, cuidado y mantenimiento de la propiedad a cambio de un porcentaje del alquiler diario.
+
+            </p>
+
+            <section class="oficinas">
+
+                <h3>Nuestras oficinas</h3>
+               <img src="img/oficina.jpg" id="oficina">
+
+            </section>
+            
+
+        </section>
+        
+
+    </main>
+
+</body>
+
+</html>
+
+<script>
+
+    const grande = document.querySelector('.grande')
+    const punto = document.querySelectorAll('.punto')
+
+    punto.forEach( ( cadaPunto , i )=> {
+
+        punto[i].addEventListener('click',()=>{
+
+            let posicion  = i
+            let operacion = posicion * -50
+
+            grande.style.transform = `translateX(${ operacion }%)`
+
+            punto.forEach( ( cadaPunto , i )=>{
+
+                punto[i].classList.remove('activo')
+
+            })
+
+            punto[i].classList.add('activo')
+
+        })
+
+    })
+
+</script>
